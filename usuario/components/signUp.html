@@ -1,0 +1,31 @@
+<div ng-controller="loginController">
+    <div class="contenido">
+    <h1>Sign Up</h1>
+    <div class="pNormal">
+    User name: <input type = "text" ng-model="signUpInfo.username" placeholder="Choose your username">
+    </div>
+    <p class = "error" ng-show="error1">Error, the user name mustn't be null. </p>
+    <br>
+    <div class="pNormal">
+    Email: <input type = "email" ng-model="signUpInfo.email" placeholder="Choose your email">
+    </div>
+    <p class = "error" ng-show="error4">Error, the format of email is wrong. </p>
+    <br>
+    <div class="pNormal">
+    Password: <input type = "password" ng-model="signUpInfo.password" placeholder="Choose your password">
+    </div>
+    <p class = "error" ng-show="error2">Error, the password mustn't be null. </p>
+    <br>
+    <div class="pNormal">
+    Confirm Password: <input type = "password" ng-model="signUpInfo.confirPass" placeholder="Confirm your password">
+    </div>
+    <p class = "error" ng-show="error3">Error, the password mustn't be null. </p>
+    <p class = "error" ng-show="error5">Error, the confirm pass is distint to your password. </p>
+    <p class = "error" ng-show="errorExiste">Error, this user name is already used.</p>
+    <br>
+    <button class="botonNormal" ng-click="signUserUp()"> Sign up</button>
+    <div ng-show="exito">
+        You have registered successfully, in a few seconds we jump to the login page.
+    </div>
+    </div>
+</div>

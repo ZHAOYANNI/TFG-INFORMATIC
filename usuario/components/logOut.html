@@ -1,0 +1,17 @@
+<div id="logOut" ng-controller="logOut"  ng-init="inicial()">
+    <div class="contentTable">
+        <div ng-show="showLoginOption">
+            <p class="pPeque">
+                Are you sure to log out?
+            </p>
+            <button class="botonNormal" ng-click="logOut()">Yes</button>
+            <button class="botonNormal"ng-click="cancel()">No</button>
+        </div>
+        <div ng-show="showText">
+            <p class="pPeque">
+               Log out succesfully!
+            </p>
+            <a class="salta" href="../index.html"> Pulse to jump </a>
+    </div>
+    
+</div>

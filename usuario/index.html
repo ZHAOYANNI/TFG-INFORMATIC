@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login page</title>
+    <!--<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">-->
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body ng-app="main">
+    <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="controls.js"></script>
+    <script type="text/javascript" src="angular-route.min.js"></script>
+    <script type="text/javascript" src="components/loginController.js"></script>
+    <script type="text/javascript" src="components/userCtrl.js"></script>
+    <script type="text/javascript" src="components/logOut.js"></script>
+    <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="../node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+    <header>
+        <div>
+            <nav class="navbar">
+                <a class="option" href="../index.html">Home</a>
+                <a class="option" href="index.html">Log in</a>
+                <a class="option" href="index.html#!/logOut">Log out</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div ng-view></div>
+    
+   
+</body>
+</html>
