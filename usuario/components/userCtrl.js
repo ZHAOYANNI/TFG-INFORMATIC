@@ -90,8 +90,8 @@ app.controller("userCtrl", function($scope,$http, $timeout){
          while(i < $scope.user_acction.length && !encontrado){
             if($scope.user_acction[i].company == company_name){
                encontrado = true;
-               $scope.user_acction[i].number_acction +=$scope.user_acction[i].number_acction;
-               $scope.user_acction[i].base += $scope.num_action*$scope.user_acction[i].current;
+               $scope.user_acction[i].number_acction = parseInt($scope.user_acction[i].number_acction) + parseInt($scope.num_action);
+               $scope.user_acction[i].base =parseFloat($scope.user_acction[i].base)+ parseFloat($scope.num_action*$scope.user_acction[i].current);
 
                $http({ 
                   url: './endpoint/updateAction.php',
@@ -130,10 +130,10 @@ app.controller("userCtrl", function($scope,$http, $timeout){
             if($scope.user_acction[i].company == company_name){
                encontrado = true;
                if($scope.user_acction[i].number_acction >= $scope.num_acction_sub){
-                  $scope.user_acction[i].number_acction -= $scope.num_acction_sub;
-                  $scope.user_acction[i].base -= $scope.num_acction_sub*$scope.user_acction[i].current;
-                  $scope.user_acction[i].profit -= $scope.num_acction_sub*$scope.user_acction[i].current;
-                  TotalProfit -= $scope.num_acction_sub*$scope.user_acction[i].current; 
+                  $scope.user_acction[i].number_acction =parseInt($scope.user_acction[i].number_acction) - parseInt($scope.num_acction_sub);
+                  $scope.user_acction[i].base = parseFloat($scope.user_acction[i].base)- parseFloat($scope.num_acction_sub*$scope.user_acction[i].current);
+                  $scope.user_acction[i].profit = parseFloat($scope.user_acction[i].profit) - parseFloat($scope.num_acction_sub*$scope.user_acction[i].current);
+                  totalProfit -= $scope.num_acction_sub*$scope.user_acction[i].current; 
                   $http({ 
                      url: './endpoint/updateAction.php',
                      method: 'POST',
@@ -142,7 +142,7 @@ app.controller("userCtrl", function($scope,$http, $timeout){
                      },
                      data: {
                         username: username,
-                        company: company,
+                        company: company_name,
                         acction: $scope.user_acction[i].number_acction,
                         base: $scope.user_acction[i].base
                      },
